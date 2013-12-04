@@ -25,4 +25,7 @@
     <bool name="noFaceDetectOnFrontCamera">true</bool>
     <!-- Use ZSL mode for Qualcomm cameras -->
     <bool name="enableZSL">true</bool>
+    <!-- Use the default resolution of the device as preview size
+    This prevents setting preview sizes above the device's resolution -->
+    <bool name="useDisplayResolutionAsPreviewSize">true</bool>
 </resources>
