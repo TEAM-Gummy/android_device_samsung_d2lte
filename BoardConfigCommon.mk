@@ -71,6 +71,10 @@ BOARD_HAVE_DOCK_USBAUDIO := true
 #camera abi compatiblily
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_BSP_CAMERA_ABI_HACK
+TARGET_NEED_DISABLE_AUTOFOCUS := true
+ifeq ($(filter cm_apexqtmo cm_expressatt,$(TARGET_PRODUCT)),)
+  TARGET_NEED_CAMERA_ZSL := true
+endif
 
 # Needed for blobs
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS

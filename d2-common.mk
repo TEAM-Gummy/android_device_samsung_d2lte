@@ -24,7 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/d2-common/overlay
 
 # Boot animation and screen size
 
-ifeq ($(filter apexqtmo expressatt,$(VARIENT_MODEL)),)
+ifeq ($(filter cm_apexqtmo cm_expressatt,$(TARGET_PRODUCT)),)
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -129,6 +129,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.vr.enable=false \
     persist.audio.speaker.location=high \
     persist.timed.enable=true \
+    persist.fuse_sdcard=true \
     ro.emmc.sdcard.partition=17 \
     ro.use_data_netmgrd=true \
     persist.data_netmgrd_nint=16 \
@@ -153,7 +154,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=false
 
 
-ifneq ($(VARIENT_MODEL),apexqtmo)
+ifneq ($(TARGET_PRODUCT),cm_apexqtmo)
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.mode=endfire \
     persist.audio.handset.mic=digital \
@@ -185,7 +186,7 @@ PRODUCT_COPY_FILES += \
 # common msm8960
 $(call inherit-product, device/samsung/msm8960-common/msm8960.mk)
 
-ifeq ($(filter apexqtmo expressatt,$(VARIENT_MODEL)),)
+ifeq ($(filter cm_apexqtmo cm_expressatt,$(TARGET_PRODUCT)),)
     $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 else
     $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
