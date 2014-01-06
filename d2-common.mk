@@ -149,10 +149,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_0="" \
     persist.rild.nitz_short_ons_1="" \
     persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3="" \
-    debug.composition.type=gpu \
-    persist.hwc.mdpcomp.enable=false
-
+    persist.rild.nitz_short_ons_3=""
 
 ifneq ($(TARGET_PRODUCT),cm_apexqtmo)
 PRODUCT_PROPERTY_OVERRIDES += \
