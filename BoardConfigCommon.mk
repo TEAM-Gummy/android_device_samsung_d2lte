@@ -93,5 +93,6 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 # Separate audio devices for VOIP
 BOARD_USES_SEPERATED_VOIP := true
 
-# Use device specific camera
+# Camera
+TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
