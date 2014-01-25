@@ -163,10 +163,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.cwm.enable_key_repeat=true \
     ro.cwm.repeatable_keys=114,115
 
-# Camera Wrapper
-PRODUCT_PACKAGES += \
-    camera.MSM8960
-
 # NFC Support
 PRODUCT_PACKAGES += \
     libnfc \
