@@ -59,6 +59,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
        device/samsung/d2-common/media/media_profiles.xml:system/etc/media_profiles.xml
 
+# S3 Advanced Settings
+PRODUCT_PACKAGES += \
+    GummyS3Settings \
+    SamsungServiceMode
+    
 # Wifi
 PRODUCT_COPY_FILES += \
     device/samsung/d2-common/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
