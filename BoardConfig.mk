@@ -26,7 +26,7 @@
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2/include
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_UNIFIED_DEVICE := true
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/d2/init_d2.c
 
 # Allow our d2's
