@@ -61,6 +61,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/I747UCDMG2:user/release-keys");
         property_set("rild.libargs", "-d /dev/smd0");
         property_set("telephony.lteOnGsmDevice","1");
+        property_set("gsm.current.phone-type", "1");
     } else if (ISMATCH(bootloader, "T999")) {
         // d2tmo
         property_set("ro.product.device", "d2tmo");
@@ -69,6 +70,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/T999UVDMD5:user/release-keys");
         property_set("rild.libargs", "-d /dev/smd0");
         property_set("telephony.lteOnGsmDevice","1");
+        property_set("gsm.current.phone-type", "1");
     } else if (ISMATCH(bootloader, "R530U")) {
         // d2usc
         property_set("ro.product.device", "d2usc");
@@ -77,6 +79,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.fingerprint", "samsung/d2usc/d2usc:4.1.1/JRO03L/R530UVXALK5:user/release-keys");
         property_set("rild.libargs", "-d /dev/smd0");
         property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("gsm.current.phone-type", "2");
     } else if (ISMATCH(bootloader, "I535")) {
         // d2vzw
         property_set("ro.product.device", "d2vzw");
@@ -101,6 +104,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.gsm.data_retry_config=max_retries", "infinite,5000,5000,60000,120000,480000,900000");
         property_set("persist.eons.enabled", "false");
         property_set("ro.config.vc_call_vol_steps", "7");
+        property_set("gsm.current.phone-type", "2");
     }
 
     // Hardware info
