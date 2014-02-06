@@ -29,6 +29,9 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2/include
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/d2/init_d2.c
 
+# Allow our d2's
+TARGET_OTA_ASSERT_DEVICE := d2att,d2tmo,d2usc,d2vzw
+
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2
 
 # Kernel
