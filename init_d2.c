@@ -53,40 +53,36 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         return;
 
     property_get("ro.bootloader", bootloader);
-    if (ISMATCH(bootloader, "I747")) {
+    if (strstr(bootloader, "I747")) {
         // d2att
         property_set("ro.product.device", "d2att");
         property_set("ro.product.model", "SGH-I747");
         property_set("ro.build.description", "d2uc-user 4.1.2 JZO54K I747UCDMG2 release-keys");
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/I747UCDMG2:user/release-keys");
-        property_set("rild.libargs", "-d /dev/smd0");
         property_set("telephony.lteOnGsmDevice","1");
         property_set("gsm.current.phone-type", "1");
-    } else if (ISMATCH(bootloader, "T999")) {
+    } else if (strstr(bootloader, "T999")) {
         // d2tmo
         property_set("ro.product.device", "d2tmo");
         property_set("ro.product.model", "SGH-T999");
         property_set("ro.build.description", "d2uc-user 4.1.2 JZO54K T999UVDMD5 release-keys");
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/T999UVDMD5:user/release-keys");
-        property_set("rild.libargs", "-d /dev/smd0");
         property_set("telephony.lteOnGsmDevice","1");
         property_set("gsm.current.phone-type", "1");
-    } else if (ISMATCH(bootloader, "R530U")) {
+    } else if (strstr(bootloader, "R530U")) {
         // d2usc
         property_set("ro.product.device", "d2usc");
         property_set("ro.product.model", "SCH-R530U");
         property_set("ro.build.description", "d2usc-user 4.1.1 JRO03L R530UVXALK5 release-keys");
         property_set("ro.build.fingerprint", "samsung/d2usc/d2usc:4.1.1/JRO03L/R530UVXALK5:user/release-keys");
-        property_set("rild.libargs", "-d /dev/smd0");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("gsm.current.phone-type", "2");
-    } else if (ISMATCH(bootloader, "I535")) {
+    } else if (strstr(bootloader, "I535")) {
         // d2vzw
         property_set("ro.product.device", "d2vzw");
         property_set("ro.product.model", "SCH-I535");
         property_set("ro.build.description", "d2vzw-user 4.3 JSS15J I535VRUCML1 release-keys");
         property_set("ro.build.fingerprint", "Verizon/d2vzw/d2vzw:4.3/JSS15J/I535VRUCML1:user/release-keys");
-        property_set("rild.libargs", "-d /dev/smd0");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.cdma.home.operator.numeric", "311480");
         property_set("ro.cdma.home.operator.alpha", "Verizon");
@@ -106,6 +102,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.config.vc_call_vol_steps", "7");
         property_set("gsm.current.phone-type", "2");
     }
+
+    // ril args
+    property_set("rild.libargs", "-d /dev/smd0");
 
     // Hardware info
     property_set("ro.device.chipset", "Qualcomm Snapdragon S4 MSM8960");
