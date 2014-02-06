@@ -29,6 +29,8 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2/include
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/d2/init_d2.c
 
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2
+
 # Kernel
 TARGET_KERNEL_SOURCE        := kernel/samsung/d2
 BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom androidboot.selinux=permissive user_debug=31 zcache
