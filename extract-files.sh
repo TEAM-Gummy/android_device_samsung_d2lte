@@ -81,9 +81,9 @@ for FILE in `egrep -v '(^#|^$)' ../d2-common/proprietary-files.txt`; do
   fi
 done
 
-BASE=../../../vendor/$VENDOR/d2-common/proprietary
+BASE=../../../vendor/$VENDOR/d2/proprietary
 rm -rf $BASE/*
-for FILE in `egrep -v '(^#|^$)' ../d2-common/common-proprietary-files.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../d2/common-proprietary-files.txt`; do
   echo "Extracting /system/$FILE ..."
   OLDIFS=$IFS IFS=":" PARSING_ARRAY=($FILE) IFS=$OLDIFS
   FILE=${PARSING_ARRAY[0]}
@@ -113,4 +113,4 @@ for FILE in `egrep -v '(^#|^$)' ../d2-common/common-proprietary-files.txt`; do
   fi
 done
 
-./../d2-common/setup-makefiles.sh
+./../d2/setup-makefiles.sh
