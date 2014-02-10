@@ -61,6 +61,24 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/I747UCDMG2:user/release-keys");
         property_set("telephony.lteOnGsmDevice","1");
         property_set("gsm.current.phone-type", "1");
+    } else if (strstr(bootloader, "R530M")) {
+        // d2mtr
+        property_set("ro.product.device", "d2mtr");
+        property_set("ro.product.model", "SGH-R530M");
+        property_set("ro.build.description", "d2mtr-user 4.1.2 JZO54K R530MVQAMF2 release-keys");
+        property_set("ro.build.fingerprint", "samsung/d2mtr/d2mtr:4.1.2/JZO54K/R530MVQAMF2:user/release-keys");
+        property_set("telephony.lteOnCdmaDevice","1");
+        property_set("ro.cdma.home.operator.numeric", "311660");
+        property_set("ro.cdma.home.operator.alpha", "MetroPCS");
+        property_set("ro.telephony.default_network", "8");
+        property_set("persist.radio.snapshot_enabled", "1");
+        property_set("persist.radio.snapshot_timer", "22");
+        property_set("ro.config.combined_signal", "true");
+        property_set("ro.gsm.data_retry_config=max_retries", "infinite,0,0,60000,120000,480000,900000");
+        property_set("DEVICE_PROVISIONED", "1");
+        property_set("persist.eons.enabled", "false");
+        property_set("keyguard.no_require_sim", "true");
+        property_set("persist.radio.no_wait_for_card", "0");
     } else if (strstr(bootloader, "T999")) {
         // d2tmo
         property_set("ro.product.device", "d2tmo");
