@@ -3,6 +3,8 @@
 def FullOTA_InstallEnd(info):
 	info.script.AppendExtra('ifelse(is_substring("I797", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_att/libril-qc-qmi-1.so /system/lib/libril-qc-qmi-1.so"));')
 	info.script.AppendExtra('ifelse(is_substring("I797", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_att/libril.so /system/lib/libril.so"));')
+	info.script.AppendExtra('ifelse(is_substring("R530C", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_cri/libril-qc-qmi-1.so /system/lib/libril-qc-qmi-1.so"));')
+	info.script.AppendExtra('ifelse(is_substring("R530C", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_cri/libril.so /system/lib/libril.so"));')
 	info.script.AppendExtra('ifelse(is_substring("R530M", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_mtr/libril-qc-qmi-1.so /system/lib/libril-qc-qmi-1.so"));')
 	info.script.AppendExtra('ifelse(is_substring("R530M", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_mtr/libril.so /system/lib/libril.so"));')
 	info.script.AppendExtra('ifelse(is_substring("T999", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_tmo/libril-qc-qmi-1.so /system/lib/libril-qc-qmi-1.so"));')

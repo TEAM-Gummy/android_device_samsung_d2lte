@@ -61,6 +61,22 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/I747UCDMG2:user/release-keys");
         property_set("telephony.lteOnGsmDevice","1");
         property_set("gsm.current.phone-type", "1");
+    } else if (strstr(bootloader, "R530C")) {
+        // d2cri
+        property_set("ro.product.device", "d2cri");
+        property_set("ro.product.model", "SCH-R530C");
+        property_set("ro.build.description", "d2cri-user 4.1.2 JZO54K R530CVVBMD6 release-keys");
+        property_set("ro.build.fingerprint", "samsung/d2cri/d2cri:4.1.2/JZO54K/R530CVVBMD6:user/release-keys");
+        property_set("telephony.lteOnCdmaDevice","1");
+        property_set("ro.cdma.home.operator.numeric", "310090");
+        property_set("ro.cdma.home.operator.alpha", "Cricket");
+        property_set("ro.telephony.default_network", "8");
+        property_set("persist.radio.snapshot_enabled", "1");
+        property_set("persist.radio.snapshot_timer", "22");
+        property_set("ro.config.combined_signal", "true");
+        property_set("ro.gsm.data_retry_config=max_retries", "infinite,0,0,60000,120000,480000,900000");
+        property_set("DEVICE_PROVISIONED", "1");
+        property_set("persist.eons.enabled", "false");
     } else if (strstr(bootloader, "R530M")) {
         // d2mtr
         property_set("ro.product.device", "d2mtr");
