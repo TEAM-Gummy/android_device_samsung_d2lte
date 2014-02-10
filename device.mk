@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
        device/samsung/d2/media/media_profiles.xml:system/etc/media_profiles.xml
 
+# Vendor init module
+PRODUCT_PACKAGES += \
+    libinit_msm
+
 # S3 Advanced Settings
 PRODUCT_PACKAGES += \
     GummyS3Settings \
