@@ -95,15 +95,29 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.eons.enabled", "false");
         property_set("keyguard.no_require_sim", "true");
         property_set("persist.radio.no_wait_for_card", "0");
-    } else if (strstr(bootloader, "L710")) {
+    } else if (strstr(bootloader, "L710W")) {
+        // d2spi
+        property_set("ro.product.device", "d2spi");
+        property_set("ro.product.model", "SCH-L710");
+        property_set("ro.build.description", "d2spi-user 4.1.2 JZO54K L710WWAMD5 release-keys");
+        property_set("ro.build.fingerprint", "samsung/d2spi/d2spi:4.1.2/JZO54K/L710WWAMD5:user/release-keys");
+        property_set("ro.cdma.home.operator.numeric", "311230");
+        property_set("ro.cdma.home.operator.alpha", "C Spire");
+        property_set("telephony.lteOnCdmaDevice","1");
+        property_set("ro.telephony.default_network", "8");
+        property_set("telephony.sms.pseudo_multipart", "1");
+        property_set("persist.radio.snapshot_enabled", "1");
+        property_set("persist.radio.snapshot_timer", "22");
+        property_set("persist.eons.enabled", "false");
+    } else if (strstr(bootloader, "L710V")) {
         // d2spr
         property_set("ro.product.device", "d2spr");
         property_set("ro.product.model", "SPH-L710");
         property_set("ro.build.description", "d2spr-user 4.1.2 JZO54K L710VPBMD4 release-keys");
         property_set("ro.build.fingerprint", "samsung/d2spr/d2spr:4.1.2/JZO54K/L710VPBMD4:user/release-keys");
-        property_set("telephony.lteOnCdmaDevice","1");
         property_set("ro.cdma.home.operator.numeric", "310120");
         property_set("ro.cdma.home.operator.alpha", "Sprint");
+        property_set("telephony.lteOnCdmaDevice","1");
         property_set("ro.telephony.default_network", "8");
         property_set("telephony.sms.pseudo_multipart", "1");
         property_set("persist.radio.snapshot_enabled", "1");
