@@ -17,10 +17,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 ## (2) Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/d2/d2-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/d2lte/d2lte-vendor.mk)
 
 ## overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/d2/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/d2lte/overlay
 
 # Boot animation and screen size
 
@@ -42,27 +42,27 @@ endif
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-        device/samsung/d2/audio/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
-        device/samsung/d2/audio/audio_policy.conf:system/etc/audio_policy.conf
+        device/samsung/d2lte/audio/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
+        device/samsung/d2lte/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 # Wifi
 PRODUCT_COPY_FILES += \
-        device/samsung/d2/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-        device/samsung/d2/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+        device/samsung/d2lte/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+        device/samsung/d2lte/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 # Keymaps
 PRODUCT_COPY_FILES += \
-       device/samsung/d2/keylayout/fsa9485.kl:system/usr/keylayout/fsa9485.kl \
-       device/samsung/d2/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
-       device/samsung/d2/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
-       device/samsung/d2/keylayout/sec_keys.kl:system/usr/keylayout/sec_keys.kl \
-       device/samsung/d2/keylayout/sec_powerkey.kl:system/usr/keylayout/sec_powerkey.kl \
-       device/samsung/d2/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-       device/samsung/d2/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
+       device/samsung/d2lte/keylayout/fsa9485.kl:system/usr/keylayout/fsa9485.kl \
+       device/samsung/d2lte/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
+       device/samsung/d2lte/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
+       device/samsung/d2lte/keylayout/sec_keys.kl:system/usr/keylayout/sec_keys.kl \
+       device/samsung/d2lte/keylayout/sec_powerkey.kl:system/usr/keylayout/sec_powerkey.kl \
+       device/samsung/d2lte/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
+       device/samsung/d2lte/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
 
 # Media profile
 PRODUCT_COPY_FILES += \
-       device/samsung/d2/media/media_profiles.xml:system/etc/media_profiles.xml
+       device/samsung/d2lte/media/media_profiles.xml:system/etc/media_profiles.xml
 
 # Vendor init module
 PRODUCT_PACKAGES += \
@@ -75,7 +75,7 @@ PRODUCT_PACKAGES += \
     
 # Kernel overclocking script
 PRODUCT_COPY_FILES += \
-    device/samsung/d2/rootdir/etc/init.d/03gummycpuclock:system/etc/init.d/03gummycpuclock
+    device/samsung/d2lte/rootdir/etc/init.d/03gummycpuclock:system/etc/init.d/03gummycpuclock
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -94,7 +94,7 @@ PRODUCT_PACKAGES += \
     gps.msm8960
 
 PRODUCT_COPY_FILES += \
-    device/samsung/d2/gps/gps.conf:system/etc/gps.conf
+    device/samsung/d2lte/gps/gps.conf:system/etc/gps.conf
 
 # Torch
 PRODUCT_PACKAGES += Torch
@@ -185,9 +185,9 @@ PRODUCT_PACKAGES += \
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/samsung/d2/nfc/nfcee_access.xml
+    NFCEE_ACCESS_PATH := device/samsung/d2lte/nfc/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := device/samsung/d2/nfc/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := device/samsung/d2lte/nfc/nfcee_access_debug.xml
 endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml

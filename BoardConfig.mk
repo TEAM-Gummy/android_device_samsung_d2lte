@@ -23,17 +23,17 @@
 # inherit from common msm8960
 -include device/samsung/msm8960-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2lte/include
 
 # Vendor init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/d2/init/init_d2.c
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/d2lte/init/init_d2lte.c
 
 # Allow our d2's
 TARGET_OTA_ASSERT_DEVICE := d2att,d2cri,d2mtr,d2spi,d2spr,d2tmo,d2usc,d2vzw
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2lte
 
 # Kernel
 TARGET_KERNEL_SOURCE        := kernel/samsung/d2
@@ -50,16 +50,16 @@ WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_NAME := "dhd"
 
 # Adreno configuration
-BOARD_EGL_CFG := device/samsung/d2/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/d2lte/configs/egl.cfg
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/d2/recovery/recovery_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/d2lte/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/samsung/d2/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/samsung/d2lte/rootdir/etc/fstab.qcom
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
@@ -74,8 +74,8 @@ TARGET_USES_QCOM_BSP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
 # bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/d2/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/d2/bluetooth/vnd_d2.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/d2lte/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/d2lte/bluetooth/vnd_d2.txt
 
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true

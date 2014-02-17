@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,16 +20,15 @@
 # details, it only fundamentally contains two inherit-product
 # lines, full and maguro, hence its name.
 #
-
+ 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit from d2 device
-$(call inherit-product, device/samsung/d2/device.mk)
+# Inherit from d2lte device
+$(call inherit-product, device/samsung/d2lte/device.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_d2
-PRODUCT_DEVICE := d2
+PRODUCT_NAME := full_d2lte
+PRODUCT_DEVICE := d2lte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := d2
+PRODUCT_MODEL := d2lte
