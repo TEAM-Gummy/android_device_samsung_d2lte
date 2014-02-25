@@ -171,10 +171,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("gsm.current.phone-type", "2");
     }
 
-    // rild args
-    property_set("rild.libargs", "-d /dev/smd0");
-    property_set("persist.radio.mode_pref_nv10","1");
-    
     // Hardware info
     property_set("ro.device.chipset", "Qualcomm Snapdragon S4 MSM8960");
     property_set("ro.device.cpu", "1.5 GHz dual-core Krait");
