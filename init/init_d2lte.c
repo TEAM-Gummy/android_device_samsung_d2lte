@@ -139,6 +139,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.model", "SCH-R530U");
         property_set("ro.build.description", "d2usc-user 4.1.1 JRO03L R530UVXALK5 release-keys");
         property_set("ro.build.fingerprint", "samsung/d2usc/d2usc:4.1.1/JRO03L/R530UVXALK5:user/release-keys");
+        property_set("ro.cdma.home.operator.numeric", "311580");
+        property_set("ro.cdma.home.operator.alpha", "U.S.Cellular");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_cdma_sub", "0");
         property_set("gsm.current.phone-type", "2");
