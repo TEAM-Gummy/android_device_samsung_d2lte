@@ -1,31 +1,31 @@
 /*
-Copyright (c) 2013, The Linux Foundation. All rights reserved.
+   Copyright (c) 2013, The Linux Foundation. All rights reserved.
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-* Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
-* Redistributions in binary form must reproduce the above
-copyright notice, this list of conditions and the following
-disclaimer in the documentation and/or other materials provided
-with the distribution.
-* Neither the name of The Linux Foundation nor the names of its
-contributors may be used to endorse or promote products derived
-from this software without specific prior written permission.
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions are
+   met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above
+      copyright notice, this list of conditions and the following
+      disclaimer in the documentation and/or other materials provided
+      with the distribution.
+    * Neither the name of The Linux Foundation nor the names of its
+      contributors may be used to endorse or promote products derived
+      from this software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
-WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
-ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+   THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+   ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+   BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+   BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+   OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+   IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 
 #include <stdlib.h>
 
@@ -53,25 +53,27 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         return;
 
     property_get("ro.bootloader", bootloader);
+
     if (strstr(bootloader, "I747")) {
-        // d2att
+        /* d2att */
         property_set("ro.product.device", "d2att");
         property_set("ro.product.model", "SGH-I747");
-        property_set("ro.build.description", "d2uc-user 4.1.2 JZO54K I747UCDMG2 release-keys");
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/I747UCDMG2:user/release-keys");
-        property_set("telephony.lteOnGsmDevice","1");
+        property_set("ro.build.description", "d2uc-user 4.1.2 JZO54K I747UCDMG2 release-keys");
+        property_set("telephony.lteOnGsmDevice", "1");
         property_set("gsm.current.phone-type", "1");
         property_set("ro.telephony.default_network", "9");
     } else if (strstr(bootloader, "R530C")) {
-        // d2cri
-        property_set("ro.product.device", "d2cri");
-        property_set("ro.product.model", "SCH-R530C");
-        property_set("ro.build.description", "d2cri-user 4.1.2 JZO54K R530CVVBMD6 release-keys");
+        /* d2cri */
         property_set("ro.build.fingerprint", "samsung/d2cri/d2cri:4.1.2/JZO54K/R530CVVBMD6:user/release-keys");
-        property_set("telephony.lteOnCdmaDevice","1");
-        property_set("ro.cdma.home.operator.numeric", "310090");
+        property_set("ro.build.description", "d2cri-user 4.1.2 JZO54K R530CVVBMD6 release-keys");
+        property_set("ro.product.model", "SCH-R530C");
+        property_set("ro.product.device", "d2cri");
         property_set("ro.cdma.home.operator.alpha", "Cricket");
+        property_set("ro.cdma.home.operator.numeric", "310090");
+        property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_network", "8");
+        property_set("ro.telephony.default_cdma_sub", "0");
         property_set("persist.radio.snapshot_enabled", "1");
         property_set("persist.radio.snapshot_timer", "22");
         property_set("ro.config.combined_signal", "true");
@@ -79,15 +81,16 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("DEVICE_PROVISIONED", "1");
         property_set("persist.eons.enabled", "false");
     } else if (strstr(bootloader, "R530M")) {
-        // d2mtr
-        property_set("ro.product.device", "d2mtr");
-        property_set("ro.product.model", "SCH-R530M");
-        property_set("ro.build.description", "d2mtr-user 4.1.2 JZO54K R530MVQAMF2 release-keys");
+        /* d2mtr */
         property_set("ro.build.fingerprint", "samsung/d2mtr/d2mtr:4.1.2/JZO54K/R530MVQAMF2:user/release-keys");
-        property_set("telephony.lteOnCdmaDevice","1");
-        property_set("ro.cdma.home.operator.numeric", "311660");
+        property_set("ro.build.description", "d2mtr-user 4.1.2 JZO54K R530MVQAMF2 release-keys");
+        property_set("ro.product.model", "SCH-R530M");
+        property_set("ro.product.device", "d2mtr");
         property_set("ro.cdma.home.operator.alpha", "MetroPCS");
+        property_set("ro.cdma.home.operator.numeric", "311660");
+        property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_network", "8");
+        property_set("ro.telephony.default_cdma_sub", "0");
         property_set("persist.radio.snapshot_enabled", "1");
         property_set("persist.radio.snapshot_timer", "22");
         property_set("ro.config.combined_signal", "true");
@@ -97,66 +100,67 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("keyguard.no_require_sim", "true");
         property_set("persist.radio.no_wait_for_card", "0");
     } else if (strstr(bootloader, "L710W")) {
-        // d2spi
-        property_set("ro.product.device", "d2spi");
-        property_set("ro.product.model", "SCH-L710");
-        property_set("ro.build.description", "d2spi-user 4.1.2 JZO54K L710WWAMD5 release-keys");
+        /* d2spi */
         property_set("ro.build.fingerprint", "samsung/d2spi/d2spi:4.1.2/JZO54K/L710WWAMD5:user/release-keys");
+        property_set("ro.build.description", "d2spi-user 4.1.2 JZO54K L710WWAMD5 release-keys");
+        property_set("ro.product.model", "SCH-L710");
+        property_set("ro.product.device", "d2spi");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.telephony.default_network", "8");
         property_set("ro.cdma.home.operator.numeric", "311230");
         property_set("ro.cdma.home.operator.alpha", "C Spire");
-        property_set("telephony.lteOnCdmaDevice","1");
-        property_set("ro.telephony.default_network", "8");
         property_set("telephony.sms.pseudo_multipart", "1");
         property_set("persist.radio.snapshot_enabled", "1");
         property_set("persist.radio.snapshot_timer", "22");
         property_set("persist.eons.enabled", "false");
     } else if (strstr(bootloader, "L710V")) {
-        // d2spr
-        property_set("ro.product.device", "d2spr");
-        property_set("ro.product.model", "SPH-L710");
-        property_set("ro.build.description", "d2spr-user 4.1.2 JZO54K L710VPBMD4 release-keys");
+        /* d2spr */
         property_set("ro.build.fingerprint", "samsung/d2spr/d2spr:4.1.2/JZO54K/L710VPBMD4:user/release-keys");
+        property_set("ro.build.description", "d2spr-user 4.1.2 JZO54K L710VPBMD4 release-keys");
+        property_set("ro.product.model", "SPH-L710");
+        property_set("ro.product.device", "d2spr");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.telephony.default_network", "8");
         property_set("ro.cdma.home.operator.numeric", "310120");
         property_set("ro.cdma.home.operator.alpha", "Sprint");
-        property_set("telephony.lteOnCdmaDevice","1");
-        property_set("ro.telephony.default_network", "8");
         property_set("telephony.sms.pseudo_multipart", "1");
         property_set("persist.radio.snapshot_enabled", "1");
         property_set("persist.radio.snapshot_timer", "22");
         property_set("persist.eons.enabled", "false");
     } else if (strstr(bootloader, "T999")) {
-        // d2tmo
-        property_set("ro.product.device", "d2tmo");
-        property_set("ro.product.model", "SGH-T999");
-        property_set("ro.build.description", "d2uc-user 4.1.2 JZO54K T999UVDMD5 release-keys");
+        /* d2tmo */
         property_set("ro.build.fingerprint", "samsung/d2uc/d2att:4.1.2/JZO54K/T999UVDMD5:user/release-keys");
-        property_set("telephony.lteOnGsmDevice","1");
+        property_set("ro.build.description", "d2uc-user 4.1.2 JZO54K T999UVDMD5 release-keys");
+        property_set("ro.product.model", "SGH-T999");
+        property_set("ro.product.device", "d2tmo");
+        property_set("telephony.lteOnGsmDevice", "1");
         property_set("gsm.current.phone-type", "1");
         property_set("ro.telephony.default_network", "9");
     } else if (strstr(bootloader, "R530U")) {
-        // d2usc
-        property_set("ro.product.device", "d2usc");
-        property_set("ro.product.model", "SCH-R530U");
-        property_set("ro.build.description", "d2usc-user 4.1.1 JRO03L R530UVXALK5 release-keys");
+        /* d2usc */
         property_set("ro.build.fingerprint", "samsung/d2usc/d2usc:4.1.1/JRO03L/R530UVXALK5:user/release-keys");
-        property_set("ro.cdma.home.operator.numeric", "311580");
+        property_set("ro.build.description", "d2usc-user 4.1.1 JRO03L R530UVXALK5 release-keys");
+        property_set("ro.product.model", "SCH-R530U");
+        property_set("ro.product.device", "d2usc");
         property_set("ro.cdma.home.operator.alpha", "U.S.Cellular");
+        property_set("ro.cdma.home.operator.numeric", "311580");
         property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.telephony.default_cdma_sub", "0");
         property_set("gsm.current.phone-type", "2");
         property_set("ro.telephony.default_network", "8");
         property_set("telephony.sms.pseudo_multipart", "1");
+        property_set("ro.telephony.default_cdma_sub", "0");
     } else if (strstr(bootloader, "I535")) {
-        // d2vzw
-        property_set("ro.product.device", "d2vzw");
-        property_set("ro.product.model", "SCH-I535");
-        property_set("ro.build.description", "d2vzw-user 4.3 JSS15J I535VRUCML1 release-keys");
+        /* d2vzw */
         property_set("ro.build.fingerprint", "Verizon/d2vzw/d2vzw:4.3/JSS15J/I535VRUCML1:user/release-keys");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.cdma.home.operator.numeric", "310004");
+        property_set("ro.build.description", "d2vzw-user 4.3 JSS15J I535VRUCML1 release-keys");
+        property_set("ro.product.model", "SCH-I535");
+        property_set("ro.product.device", "d2vzw");
+        property_set("ro.telephony.default_cdma_sub", "0");
         property_set("ro.cdma.home.operator.alpha", "Verizon");
-        property_set("ro.cdma.subscribe_on_ruim_ready", "true");
+        property_set("ro.cdma.home.operator.numeric", "310004");
+        property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_network", "10");
+        property_set("ro.cdma.subscribe_on_ruim_ready", "true");
         property_set("keyguard.no_require_sim", "true");
         property_set("DEVICE_PROVISIONED", "1");
         property_set("ro.config.svlte1x", "true");
@@ -168,7 +172,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.config.combined_signal", "true");
         property_set("ro.gsm.data_retry_config=max_retries", "infinite,5000,5000,60000,120000,480000,900000");
         property_set("persist.eons.enabled", "false");
-        property_set("ro.telephony.default_cdma_sub", "0");
         property_set("ro.config.vc_call_vol_steps", "7");
         property_set("gsm.current.phone-type", "2");
     }
