@@ -25,16 +25,6 @@
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2lte/include
 
-# Vendor init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/d2lte/init/init_d2lte.c
-
-# Allow our d2's
-TARGET_OTA_ASSERT_DEVICE := d2att,d2cri,d2mtr,d2spi,d2spr,d2tmo,d2usc,d2vzw
-
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2lte
-
 # Kernel
 TARGET_KERNEL_SOURCE        := kernel/samsung/d2
 BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom androidboot.selinux=permissive user_debug=31 zcache
@@ -59,6 +49,7 @@ BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_RECOVERY_SWIPE := true
 TARGET_RECOVERY_FSTAB := device/samsung/d2lte/rootdir/etc/fstab.qcom
 
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -72,6 +63,11 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/d2lte/init/init_d2lte.c
 
 # bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/d2lte/bluetooth
@@ -102,6 +98,12 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Separate audio devices for VOIP
 BOARD_USES_SEPERATED_VOIP := true
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := d2att,d2cri,d2mtr,d2spi,d2spr,d2tmo,d2usc,d2vzw,d2lte
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2lte/releasetools
 
 #Disable FM
 AUDIO_FEATURE_DISABLED_FM := true
