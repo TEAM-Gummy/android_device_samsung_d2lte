@@ -100,7 +100,7 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 BOARD_USES_SEPERATED_VOIP := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := d2att,d2cri,d2mtr,d2spi,d2spr,d2tmo,d2usc,d2vzw,d2lte
+TARGET_OTA_ASSERT_DEVICE := d2att,d2cri,d2mtr,d2spi,d2spr,d2tmo,d2usc,d2vmu,d2vzw,d2lte
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2lte/releasetools
