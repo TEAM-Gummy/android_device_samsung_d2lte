@@ -98,8 +98,10 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 # Separate audio devices for VOIP
 BOARD_USES_SEPERATED_VOIP := true
 
+ifeq ($(filter cm_apexqtmo cm_expressatt cm_d2dcm,$(TARGET_PRODUCT)),)
 # Assert
-TARGET_OTA_ASSERT_DEVICE := d2att,d2cri,d2mtr,d2spi,d2spr,d2tmo,d2usc,d2vmu,d2vzw,d2lte
+TARGET_OTA_ASSERT_DEVICE := d2att,d2spr,d2spi,d2tfnspr,d2tmo,d2cri,d2mtr,d2usc,d2vmu,d2vzw,d2lte
+endif
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/d2lte/releasetools
