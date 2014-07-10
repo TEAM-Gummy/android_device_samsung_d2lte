@@ -77,6 +77,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/d2lte/rootdir/etc/init.d/03gummycpuclock:system/etc/init.d/03gummycpuclock
 
+#TWRP
+PRODUCT_COPY_FILES += \
+    device/samsung/d2lte/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
