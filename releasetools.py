@@ -24,7 +24,4 @@ def FullOTA_InstallEnd(info):
 	info.script.AppendExtra('ifelse(is_substring("S968C", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_r530/* /system/lib/"));')
 	info.script.AppendExtra('ifelse(is_substring("I747", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_att/* /system/lib/"));')
 	info.script.AppendExtra('ifelse(is_substring("T999", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_tmo/* /system/lib/"));')
-	info.script.AppendExtra('ifelse(is_substring("T699", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_tmo/* /system/lib/"));')
-	info.script.AppendExtra('ifelse(is_substring("T699", getprop("ro.bootloader")), run_program("/system/bin/wifimac.sh"));')
-	info.script.AppendExtra('ifelse(is_substring("I437", getprop("ro.bootloader")), run_program("/system/bin/wifimac.sh"));')
 	info.script.AppendExtra('ifelse(is_substring("SC06D", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox mv /system/lib_tmo/* /system/lib/"));')
